@@ -13,7 +13,6 @@ Future<MarketList> fetchMarkets(http.Client client) async {
 MarketList parseMarkets(String responseBody) {
   final mparsed = jsonDecode(responseBody)['markets'];
   MarketList marketList = MarketList.fromJson(mparsed);
-  print(marketList);
   return marketList;
 }
 
@@ -32,7 +31,7 @@ class Markets {
   final String introduction;
   final String created_at;
   final String updated_at;
-  final bool selected;
+   bool selected;
 
   Markets(
       {this.id,
@@ -63,6 +62,7 @@ class Markets {
         updated_at: json['updated_at'] as String,
         selected : false);
   }
+
 }
 
 class MarketList{
@@ -71,7 +71,33 @@ class MarketList{
 
   factory MarketList.fromJson(List<dynamic> json){
     List<Markets> markets = new List<Markets>();
-    markets = json.map((i) => Markets.fromJson(i)).toList();
+    markets = json.map<Markets>((i) => Markets.fromJson(i)).toList();
+    markets[0].selected = true;
     return new MarketList(markets: markets);
   }
+
+  // selectById(int id) {
+  //   this.markets.forEach((Markets markets) {
+  //     markets.selected = false;
+  //     if (markets.id == id) {
+  //       markets.selected = true;
+  //     }
+  //   });
+  // }
+}
+
+void selectById(List<Markets> markets, int id) {
+  markets.forEach((Markets markets) {
+    markets.selected = false;
+    if (markets.id == id) {
+      markets.selected = true;
+    }
+  });
+}
+int selectedId(List<Markets> markets, int id) {
+  markets.forEach((Markets markets) {
+    if (markets.id == id) {
+      return markets.id;
+    }
+  });
 }

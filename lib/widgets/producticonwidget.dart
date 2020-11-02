@@ -1,50 +1,72 @@
 import 'package:flutter/material.dart';
 import 'package:couintproject/models/markets.dart';
+import 'package:couintproject/screens/home.dart';
+import 'package:couintproject/widgets/productwidget.dart';
 
 class ProductIconWidget extends StatefulWidget {
-  ValueChanged<String> onPressed;
+  ValueChanged<int> onPressed;
   Markets markets;
   String heroTag;
-  ProductIconWidget({Key key, }) : super(key: key);
+
+  ProductIconWidget({Key key, this.onPressed, this.markets, this.heroTag})
+      : super(key: key);
 
   @override
   _ProductIconWidgetState createState() => _ProductIconWidgetState();
 }
 
-class _ProductIconWidgetState extends State<ProductIconWidget> with SingleTickerProviderStateMixin {
+class _ProductIconWidgetState extends State<ProductIconWidget>
+    with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.symmetric(horizontal: 0),
-        margin: EdgeInsets.only(right: 10, top: 10, bottom: 10),
-        child: Text('빌드아이콘위젯'));
-        // child: buildSelectedBrand(context) ,
-
+      decoration: BoxDecoration(border: Border.all(color: Colors.orange, width: 0)),
+      // margin: EdgeInsets.only(right: 10, top: 10, bottom: 10),
+      child: buildSelectedMarkets(context),
+      // Image.network('https://couint.com/storage/' + widget.markets.image)
+    );
   }
 
-  InkWell buildSelectedBrand(BuildContext context) {
-    return InkWell(
-      splashColor: Colors.blueAccent,
-      highlightColor: Colors.white,
-      onTap: () {
-        setState(() {
-          ///아이콘이 눌렸는지 상태 변환
-        });
-      },
-      child: AnimatedContainer(
-          duration: Duration(milliseconds: 350),
-          curve: Curves.easeInOut,
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          decoration: BoxDecoration(
-              color: Colors.yellow, borderRadius: BorderRadius.circular(50)),
-          child: Row(children: <Widget>[
-            Hero(
-              tag: 'mytag',
-              child: Image.network(
-                  'https://brandongaille.com/wp-content/uploads/2013/08/Starbucks-Company-Logo.jpg'),
+  Material buildSelectedMarkets(BuildContext context) {
+    return Material(
 
-            )
-          ])),
+      child: InkWell(
+        splashColor: Colors.white,
+        highlightColor: Colors.blueAccent,
+        onTap: () {
+          setState(() {
+            print('widget tapped');
+            widget.onPressed(widget.markets.id);
+            Home.selectedIndex = widget.markets.id;
+          });
+        },
+        child: AnimatedContainer(
+            duration: Duration(seconds:1),
+            curve: Curves.easeInOut,
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            decoration: BoxDecoration(
+              color: widget.markets.selected? Colors.lightBlueAccent: Colors.blueAccent,
+            ),
+            child: Row(children: <Widget>[
+              Hero(
+                tag: widget.heroTag + widget.markets.id.toString(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FlatButton(
+                      child: Text(widget.markets.name,style: TextStyle(color: Colors.white)),
+                    ),
+                    // Padding (
+                    //   padding : EdgeInsets.symmetric (horizontal : 10.0),
+                    //   child : Container (
+                    //     height : 1.0,
+                    //     width : 50.0,
+                    //     color : Colors.black,),),
+                  ],
+                ),
+              )
+            ])),
+      ),
     );
   }
 }
