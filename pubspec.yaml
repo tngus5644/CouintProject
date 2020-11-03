@@ -39,8 +39,10 @@ dependencies:
   curved_navigation_bar: ^0.3.0
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+
+    flutter_native_splash: ^0.1.9
+    flutter_test:
+      sdk: flutter
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -48,10 +50,116 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
 
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
+
+
+
   uses-material-design: true
+  assets:
+      - img/onboarding0.png
+      - img/onboarding1.png
+      - img/onboarding2.png
+      - img/onboarding3.png
+      - img/twitter.png
+      - img/facebook.png
+      - img/google-plus.png
+      - img/linkedin.png
+      - img/user1.jpg
+      - img/user2.jpg
+      - img/user3.jpg
+      - img/user0.jpg
+      - img/visa.png
+      - img/paypal.png
+      - img/apple_pay.png
+      - img/brazil.png
+      - img/canada.png
+      - img/china.png
+      - img/france.png
+      - img/germany.png
+      - img/italy.png
+      - img/netherlands.png
+      - img/spain.png
+      - img/united-arab-emirates.png
+      - img/united-states-of-america.png
+      - img/marker.png
+      - img/pro1.webp
+      - img/pro2.webp
+      - img/pro3.webp
+      - img/pro4.webp
+      - img/pro5.webp
+      - img/pro6.webp
+      - img/pro7.webp
+      - img/man1.webp
+      - img/man2.webp
+      - img/man3.webp
+      - img/man4.webp
+      - img/man5.webp
+      - img/man6.webp
+      - img/man7.webp
+      - img/man8.webp
+      - img/baby1.webp
+      - img/baby2.webp
+      - img/baby3.webp
+      - img/baby4.webp
+      - img/baby5.webp
+      - img/baby6.webp
+      - img/home1.webp
+      - img/home2.webp
+      - img/home3.webp
+      - img/home4.webp
+      - img/home5.webp
+      - img/home6.webp
+      - img/home7.webp
+      - img/home8.webp
+      - img/home9.webp
+      - img/home10.webp
+      - img/home11.webp
+      - img/sport1.webp
+      - img/sport2.webp
+      - img/sport3.webp
+      - img/sport4.webp
+      - img/sport5.webp
+      - img/sport6.webp
+      - img/sport7.webp
+      - img/sport8.webp
+      - img/sport9.webp
+      - img/sport10.webp
+      - img/watch1.webp
+      - img/watch2.webp
+      - img/watch3.webp
+      - img/watch4.webp
+      - img/watch5.webp
+      - img/watch6.webp
+      - img/watch7.webp
+      - img/watch8.webp
+      - img/watch9.webp
+      - img/acer.svg
+      - img/apple.svg
+      - img/casio.svg
+      - img/samsung.svg
+      - img/xerox.svg
+      - img/nikon.svg
+      - img/intel.svg
+      - img/huawei.svg
+      - img/gopro.svg
+      - img/hp.svg
+      - img/logo-03.svg
+      - img/logo-04.svg
+      - img/logo-05.svg
+      - img/logo-06.svg
+      - img/logo-07.svg
+      - img/logo-08.svg
+      - img/logo-09.svg
+      - img/logo-10.svg
+      - img/logo-11.svg
+      - img/slider1.jpg
+      - img/slider2.jpg
+      - img/slider3.jpg
+      - img/couint_logo8.png
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -83,3 +191,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+flutter_native_splash:
+      image: img/couint_logo8.png
+      color: "FF448AFF"

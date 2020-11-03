@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:couintproject/models/markets.dart';
-import 'package:couintproject/screens/home.dart';
+import 'package:couintproject/screens/shoppingscreen.dart';
 import 'package:couintproject/widgets/productwidget.dart';
 
 class ProductIconWidget extends StatefulWidget {
@@ -37,7 +37,7 @@ class _ProductIconWidgetState extends State<ProductIconWidget>
           setState(() {
             print('widget tapped');
             widget.onPressed(widget.markets.id);
-            Home.selectedIndex = widget.markets.id;
+            Shopping.selectedIndex = widget.markets.id;
           });
         },
         child: AnimatedContainer(
@@ -55,6 +55,7 @@ class _ProductIconWidgetState extends State<ProductIconWidget>
                   children: [
                     FlatButton(
                       child: Text(widget.markets.name,style: TextStyle(color: Colors.white)),
+                      onPressed: (){},
                     ),
                     // Padding (
                     //   padding : EdgeInsets.symmetric (horizontal : 10.0),

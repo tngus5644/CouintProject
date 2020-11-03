@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:couintproject/screens/home.dart';
+import 'package:couintproject/screens/shoppingscreen.dart';
 
 class myBottomNavigationBar extends StatefulWidget {
 
@@ -30,13 +30,13 @@ class _myBottomNavigationBarState extends State<myBottomNavigationBar> {
         BottomNavigationBarItem(icon: Icon(Icons.list), label: '결제내역'),
         BottomNavigationBarItem(icon: Icon(Icons.settings), label: '프로필')
       ],
-      currentIndex: Home.selectedBottom,
+      currentIndex: Shopping.selectedBottom,
       onTap: _onItemTapped,
     );
   }
 
   void _onItemTapped(int index) {
-    Home.selectedBottom = index;
+    Shopping.selectedBottom = index;
     setState(() {
       switch (index) {
         case 0: Navigator.pushNamed(context, '/');

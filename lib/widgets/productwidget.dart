@@ -5,7 +5,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:couintproject/models/products.dart';
 import 'package:http/http.dart' as http;
 import 'productgriditemwidget.dart';
-import 'package:couintproject/screens/home.dart';
+import 'package:couintproject/screens/shoppingscreen.dart';
 
 class ProductWidget extends StatefulWidget {
   Animation animationOpacity;

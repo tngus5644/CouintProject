@@ -1,9 +1,13 @@
 
 import 'package:couintproject/screens/couponscreen.dart';
 import 'package:couintproject/screens/home.dart';
+import 'package:couintproject/screens/shoppingscreen.dart';
 import 'package:couintproject/screens/paymentlistscreen.dart';
 import 'package:couintproject/screens/profilescreen.dart';
+import 'package:couintproject/widgets/SignInWidget.dart';
+import 'package:couintproject/widgets/SignUpWidget.dart';
 import 'package:flutter/material.dart';
+
 
 
 class RouteGenerator {
@@ -13,6 +17,8 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => Home());
+      case '/shopping':
+        return MaterialPageRoute(builder: (_) => Shopping());
       case '/coupon':
 
         return MaterialPageRoute(builder: (_) => CouponPoint());
@@ -20,7 +26,12 @@ class RouteGenerator {
       case '/payment':
         return MaterialPageRoute(builder: (_) => PaymentList());
       case '/profile':
+        return MaterialPageRoute(builder: (_) => ProfileScreen());
+      case '/signup':
+        return MaterialPageRoute(builder: (_) => SignUpWidget());
+      case '/signin':
         return MaterialPageRoute(builder: (_) => SignInWidget());
+
 
 
       default:

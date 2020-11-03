@@ -63,11 +63,11 @@ class Data {
   String toString() {
     return '{ ${this.id}, ${this.market_id}, ${this.name}, ${this.image},${this.price},${this.introduction},${this.long_introduction},${this.created_at},${this.updated_at},${this.is_ready} }';
   }
-  String getPrice({double myPrice}) {
+  String getPrice({int myPrice}) {
     if (myPrice != null) {
-      return '\$${myPrice.toStringAsFixed(2)}';
+      return '${myPrice.toInt()}\￦';
     }
-    return '\$${this.price.toStringAsFixed(2)}';
+    return '${this.price.toInt()}\￦';
   }
 }
 

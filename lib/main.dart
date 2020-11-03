@@ -1,7 +1,7 @@
 import 'package:couintproject/route_generator.dart';
 
 import 'config/app_config.dart' as config;
-import 'file:///D:/FLUTTERPROJECT/couintproject/lib/screens/home.dart';
+
 import 'package:couintproject/screens/paymentlistscreen.dart';
 import 'package:couintproject/screens/couponscreen.dart';
 import 'package:flutter/material.dart';
