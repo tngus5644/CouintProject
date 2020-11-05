@@ -19,6 +19,8 @@ class _SignInWidgetState extends State<SignInWidget> {
   Future<String> futureToken;
   String token;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  static String SignInId;
+
 
   @override
   void initState() {
@@ -137,9 +139,8 @@ class _SignInWidgetState extends State<SignInWidget> {
                             EdgeInsets.symmetric(vertical: 12, horizontal: 70),
                         onPressed: () async {
                           futureToken = Future.value('fail');
-                          token = await futureToken;
                           futureToken = PostLogIn(
-                              'ost5253@gmail.com', passwordController.text);
+                              'ost5253@gmail.com', 'abcdefg');
                           token = await futureToken;
 
                           // 2 number refer the index of Home page
@@ -153,13 +154,15 @@ class _SignInWidgetState extends State<SignInWidget> {
                           //   scaffoldKey.currentState.showSnackBar(
                           //       SnackBar(content: Text("패스워드를 입력하세요.")));
                           // }
-                         if (token == 'postfail') {
+                          if (token == 'postfail') {
                             scaffoldKey.currentState.showSnackBar(
-                                SnackBar(content: Text("로그인 정보를 확인하세요.")));
-                          }
-                          else {Navigator.of(context).pushNamed('/shopping');
-                          Home.loginState = true;
-                          Home.token = token;
+                                SnackBar(content: Text("로그인 정보를 확인하세요.")), );
+
+                          } else {
+                            Navigator.of(context).popAndPushNamed('/shopping');
+
+                            Home.loginState = true;
+                            Home.token = token;
                           }
                           //ost5253@gmail.com
                           //abcdefg

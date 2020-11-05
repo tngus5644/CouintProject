@@ -39,7 +39,7 @@ class _myBottomNavigationBarState extends State<myBottomNavigationBar> {
     Shopping.selectedBottom = index;
     setState(() {
       switch (index) {
-        case 0: Navigator.pushNamed(context, '/');
+        case 0: Navigator.pushNamed(context, '/shopping');
         break;
         case 1 :Navigator.pushNamed(context, '/coupon');
         break;

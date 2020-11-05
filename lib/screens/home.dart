@@ -12,7 +12,6 @@ class Home extends StatelessWidget {
   static String token;
   @override
   Widget build(BuildContext context) {
-
     if(loginState==true) return Shopping();
     else return SignInWidget();
 

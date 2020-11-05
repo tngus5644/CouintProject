@@ -6,6 +6,7 @@ import 'package:couintproject/screens/paymentlistscreen.dart';
 import 'package:couintproject/screens/profilescreen.dart';
 import 'package:couintproject/widgets/SignInWidget.dart';
 import 'package:couintproject/widgets/SignUpWidget.dart';
+import 'package:couintproject/widgets/WebViewWidget.dart';
 import 'package:flutter/material.dart';
 
 
@@ -31,6 +32,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => SignUpWidget());
       case '/signin':
         return MaterialPageRoute(builder: (_) => SignInWidget());
+      case '/accountwebview':
+        return MaterialPageRoute(builder: (_) => WebViewWidget());
 
 
 
