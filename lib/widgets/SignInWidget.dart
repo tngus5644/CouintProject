@@ -159,7 +159,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                 SnackBar(content: Text("로그인 정보를 확인하세요.")), );
 
                           } else {
-                            Navigator.of(context).popAndPushNamed('/shopping');
+                            Navigator.of(context).popAndPushNamed('/calendar');
 
                             Home.loginState = true;
                             Home.token = token;

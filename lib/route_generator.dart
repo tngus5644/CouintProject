@@ -1,4 +1,5 @@
 
+import 'package:couintproject/screens/calendarscreen.dart';
 import 'package:couintproject/screens/couponscreen.dart';
 import 'package:couintproject/screens/home.dart';
 import 'package:couintproject/screens/shoppingscreen.dart';
@@ -34,7 +35,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => SignInWidget());
       case '/accountwebview':
         return MaterialPageRoute(builder: (_) => WebViewWidget());
-
+      case '/calendar':
+        return MaterialPageRoute(builder: (_) => CalendarScreen());
 
 
       default:

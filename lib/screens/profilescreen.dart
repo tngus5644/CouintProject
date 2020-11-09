@@ -2,6 +2,7 @@ import 'package:couintproject/models/column_builder.dart';
 import 'package:couintproject/widgets/AccountWidget.dart';
 import 'package:couintproject/widgets/NewAccountWidget.dart';
 import 'package:couintproject/widgets/SocialMediaWidget.dart';
+import 'package:couintproject/widgets/TopCenterContainer.dart';
 import 'package:couintproject/widgets/WebViewWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -28,18 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Stack(
             children: [
-              Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 5,
-                  decoration: BoxDecoration(color: Colors.blueAccent),
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                    '  프로필',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold),
-                  )),
+              TopCenterContainer(),
               Column(
                 children: [
                   SizedBox(height: 60),

@@ -1,3 +1,4 @@
+import 'package:couintproject/widgets/TopCenterContainer.dart';
 import 'package:couintproject/widgets/WebViewWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:couintproject/widgets/mybottomnavigationbar.dart';
@@ -13,20 +14,10 @@ class _PaymentListState extends State<PaymentList> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          padding: EdgeInsets.symmetric(vertical: 25),
+
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                child: Text(
-                  '결제 내역',
-                  style: TextStyle(fontSize: 40),
-                ),
-                width: 420,
-                height: 60,
-                decoration: BoxDecoration(color: Colors.blueAccent),
-              ),
+              TopCenterContainer(),
               Container(
                   child: Text(
                 '데이터가 없습니다.',

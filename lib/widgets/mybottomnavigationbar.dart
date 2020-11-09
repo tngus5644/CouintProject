@@ -21,6 +21,7 @@ class _myBottomNavigationBarState extends State<myBottomNavigationBar> {
       unselectedItemColor: Colors.orange,
 
       items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: '가계부'),
         BottomNavigationBarItem(
           icon: Icon(Icons.shopping_cart),
           label: '쇼핑',
@@ -39,13 +40,15 @@ class _myBottomNavigationBarState extends State<myBottomNavigationBar> {
     Shopping.selectedBottom = index;
     setState(() {
       switch (index) {
-        case 0: Navigator.pushNamed(context, '/shopping');
+        case 0: Navigator.pushNamed(context, '/calendar');
         break;
-        case 1 :Navigator.pushNamed(context, '/coupon');
+        case 1: Navigator.pushNamed(context, '/shopping');
         break;
-        case 2:Navigator.pushNamed(context, '/payment');
+        case 2 :Navigator.pushNamed(context, '/coupon');
         break;
-        case 3:Navigator.pushNamed(context, '/profile');
+        case 3:Navigator.pushNamed(context, '/payment');
+        break;
+        case 4:Navigator.pushNamed(context, '/profile');
         break;
       }
     });

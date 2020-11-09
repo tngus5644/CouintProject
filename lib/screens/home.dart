@@ -1,3 +1,4 @@
+import 'package:couintproject/screens/calendarscreen.dart';
 import 'package:couintproject/screens/shoppingscreen.dart';
 import 'package:couintproject/widgets/SignInWidget.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class Home extends StatelessWidget {
   static String token;
   @override
   Widget build(BuildContext context) {
-    if(loginState==true) return Shopping();
+    if(loginState==true) return CalendarScreen();
     else return SignInWidget();
 
 
