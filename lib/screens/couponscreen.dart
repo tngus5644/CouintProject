@@ -30,7 +30,7 @@ class _CouponPointState extends State<CouponPoint> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 60),
+                SizedBox(height: 80),
                 Container(
                   alignment: Alignment.center,
                   child: Card(
@@ -42,7 +42,7 @@ class _CouponPointState extends State<CouponPoint> {
                     // ),
                     child: Container(
                         height: MediaQuery.of(context).size.height / 5,
-                        width: MediaQuery.of(context).size.width - 30,
+                        width: MediaQuery.of(context).size.width - 20,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

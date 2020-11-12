@@ -1,5 +1,5 @@
 import 'package:couintproject/route_generator.dart';
-
+import 'package:intl/date_symbol_data_local.dart';
 import 'config/app_config.dart' as config;
 
 import 'package:couintproject/screens/paymentlistscreen.dart';
@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:couintproject/config/ui_icons.dart';
 void main() {
 
-  runApp(MyApp());
+  initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {

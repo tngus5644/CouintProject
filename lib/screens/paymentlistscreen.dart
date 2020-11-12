@@ -21,7 +21,7 @@ class _PaymentListState extends State<PaymentList> {
             Center(
               child: Card(
                 child: Container(
-                    width: MediaQuery.of(context).size.width - 30,
+                    width: MediaQuery.of(context).size.width - 20,
                     height: MediaQuery.of(context).size.height / 2,
                     child: Text(
                       '데이터가 없습니다.',

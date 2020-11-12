@@ -35,7 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Center(
                     child: Card(
                       child: Container(
-                          width: MediaQuery.of(context).size.width - 30,
+                          width: MediaQuery.of(context).size.width - 20,
                           height: MediaQuery.of(context).size.width / 4 + 20,
                           child: Column(
                             children: [
