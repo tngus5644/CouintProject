@@ -34,12 +34,12 @@ class _CouponPointState extends State<CouponPoint> {
                 Container(
                   alignment: Alignment.center,
                   child: Card(
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      side: BorderSide(
-                          color: Colors.grey.withOpacity(0.5), width: 1),
-                    ),
+                    elevation: 0,
+                    // shape: RoundedRectangleBorder(
+                    //   borderRadius: BorderRadius.circular(20),
+                    //   side: BorderSide(
+                    //       color: Colors.grey.withOpacity(0.5), width: 1),
+                    // ),
                     child: Container(
                         height: MediaQuery.of(context).size.height / 5,
                         width: MediaQuery.of(context).size.width - 30,
@@ -49,17 +49,21 @@ class _CouponPointState extends State<CouponPoint> {
                             Padding(
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 5)),
-                            Text(
-                              'Kontain',
-                              style: TextStyle(fontSize: 25),
+                            Center(
+                              child: Text(
+                                'Kontain',
+                                style: TextStyle(fontSize: 25),
+                              ),
                             ),
                             Padding(
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 10)),
-                            Text(
-                              '보유중인 기프티콘이 없습니다',
-                              style: TextStyle(fontSize: 15),
-                            ),
+                            Center(
+                              child: Text(
+                                '보유중인 기프티콘이 없습니다',
+                                style: TextStyle(fontSize: 15),
+                              ),
+                            )
                             // Padding(
                             //     padding:
                             //         const EdgeInsets.symmetric(vertical: 10)),

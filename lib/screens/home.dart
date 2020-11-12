@@ -5,14 +5,12 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
 
-
-
-
 class Home extends StatelessWidget {
   static bool loginState = false;
   static String token;
   @override
   Widget build(BuildContext context) {
+
     if(loginState==true) return CalendarScreen();
     else return SignInWidget();
 
@@ -20,7 +18,6 @@ class Home extends StatelessWidget {
   }
 
 }
-
 
 // Center(
 // child: Image.network(

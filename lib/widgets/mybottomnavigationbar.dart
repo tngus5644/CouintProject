@@ -17,8 +17,8 @@ class _myBottomNavigationBarState extends State<myBottomNavigationBar> {
       showUnselectedLabels: true,
       backgroundColor: Colors.blueAccent,
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.orange,
+      selectedItemColor: Colors.redAccent,
+      unselectedItemColor: Colors.white,
 
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: '가계부'),

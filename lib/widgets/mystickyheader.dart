@@ -11,8 +11,6 @@ class MyStickyHeader extends StatefulWidget {
   int selectedIndex;
   List<Markets> marketList;
 
-
-
   MyStickyHeader({Key key, this.heroTag, this.selectedIndex, this.onChanged, this.marketList})
       : super(key: key);
 
@@ -21,8 +19,6 @@ class MyStickyHeader extends StatefulWidget {
 }
 
 class _MyStickyHeaderState extends State<MyStickyHeader> {
-
-
   @override
   void initState() {
     // TODO: implement initState
@@ -39,11 +35,6 @@ class _MyStickyHeaderState extends State<MyStickyHeader> {
             Expanded(
               child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.blueAccent,
-                    // borderRadius: BorderRadius.only(
-                    //   bottomRight: Radius.circular(15),
-                    //   bottomLeft: Radius.circular(15),
-                    // ),
                   ),
                   child: ListView.builder(
                     shrinkWrap: true,
@@ -56,6 +47,9 @@ class _MyStickyHeaderState extends State<MyStickyHeader> {
                           setState(() {
                             selectById(widget.marketList, id);
                             widget.onChanged(id);
+                            print(widget.marketList[0].selected);
+                            print(widget.marketList[1].selected);
+                            print(widget.marketList[2].selected);
                           });
                         },
                         markets: widget.marketList.elementAt(index),

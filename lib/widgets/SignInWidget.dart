@@ -20,8 +20,6 @@ class _SignInWidgetState extends State<SignInWidget> {
   String token;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   static String SignInId;
-
-
   @override
   void initState() {
     super.initState();

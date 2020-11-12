@@ -19,52 +19,43 @@ class _ProductIconWidgetState extends State<ProductIconWidget>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(border: Border.all(color: Colors.orange, width: 0)),
-      // margin: EdgeInsets.only(right: 10, top: 10, bottom: 10),
-      child: buildSelectedMarkets(context),
-      // Image.network('https://couint.com/storage/' + widget.markets.image)
-    );
+    return buildSelectedMarkets(context);
   }
 
-  Material buildSelectedMarkets(BuildContext context) {
-    return Material(
-
+  Container buildSelectedMarkets(BuildContext context)  {
+    return Container(
+      decoration:
+          BoxDecoration(border: Border.all(color: Colors.white, width: 0.5),
+          color:
+          widget.markets.selected
+              ? Colors.blueAccent[50]
+              : Colors.blueAccent,),
       child: InkWell(
-        splashColor: Colors.white,
-        highlightColor: Colors.blueAccent,
         onTap: () {
           setState(() {
-            print('widget tapped');
             widget.onPressed(widget.markets.id);
             Shopping.selectedIndex = widget.markets.id;
+
           });
         },
         child: AnimatedContainer(
-            duration: Duration(seconds:1),
+            duration: Duration(seconds: 1),
             curve: Curves.easeInOut,
             padding: EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(
-              color: widget.markets.selected? Colors.lightBlueAccent: Colors.blueAccent,
+              color:
+              widget.markets.selected
+                  ? Colors.blueAccent[50]
+                  : Colors.blueAccent,
             ),
             child: Row(children: <Widget>[
               Hero(
                 tag: widget.heroTag + widget.markets.id.toString(),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                child:
                     FlatButton(
-                      child: Text(widget.markets.name,style: TextStyle(color: Colors.white)),
-                      onPressed: (){},
+                      child: Text(widget.markets.name,
+                          style: TextStyle(color: Colors.white)),
                     ),
-                    // Padding (
-                    //   padding : EdgeInsets.symmetric (horizontal : 10.0),
-                    //   child : Container (
-                    //     height : 1.0,
-                    //     width : 50.0,
-                    //     color : Colors.black,),),
-                  ],
-                ),
               )
             ])),
       ),

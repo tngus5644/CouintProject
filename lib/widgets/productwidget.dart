@@ -9,12 +9,11 @@ import 'package:couintproject/screens/shoppingscreen.dart';
 
 class ProductWidget extends StatefulWidget {
   Animation animationOpacity;
-  int selectedIndex;
   ValueChanged<String> onChanged;
-  Products products;
+  List<Data> products;
 
   ProductWidget(
-      {Key key, this.animationOpacity, this.selectedIndex, this.products})
+      {Key key, this.animationOpacity, this.products})
       : super(key: key);
 
   @override
@@ -22,20 +21,18 @@ class ProductWidget extends StatefulWidget {
 }
 
 class _ProductWidgetState extends State<ProductWidget> {
+
+
   @override
   void initState() {
+
     // TODO: implement initState
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    // Products drawProducts = new Products();
-    // for(int i=0 ; i<widget.products.data.length; i++){
-    //   if(widget.products.data[i].id == Home.selectedIndex)
-    //     drawProducts.data[i] = widget.products.data[i];
-    //
-    // }
+
     return FadeTransition(
       opacity: widget.animationOpacity,
       child: Container(
@@ -43,10 +40,10 @@ class _ProductWidgetState extends State<ProductWidget> {
           primary: false,
           shrinkWrap: true,
           crossAxisCount: 2,
-          itemCount: widget.products.data.length,
+          itemCount: widget.products.length,
           itemBuilder: (BuildContext context, int index) {
             return ProductGridItemWidget(
-              data: widget.products.data[index],
+              data: widget.products[index],
               heroTag: 'home_sticky_content',
             );
           },

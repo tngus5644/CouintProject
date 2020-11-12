@@ -5,7 +5,6 @@ import 'package:webview_flutter/webview_flutter.dart';
 class WebViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print('1');
     return Scaffold(
       body:SafeArea(
       child : WebView(

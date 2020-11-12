@@ -10,7 +10,6 @@ Future<String> PostLogIn(String email, String password) async {
     'email': email,
     'password': password,
   });
-  print(response.body);
 
 
     token = parseLogIn(response.body);

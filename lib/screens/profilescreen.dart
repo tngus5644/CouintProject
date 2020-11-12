@@ -4,6 +4,7 @@ import 'package:couintproject/widgets/NewAccountWidget.dart';
 import 'package:couintproject/widgets/SocialMediaWidget.dart';
 import 'package:couintproject/widgets/TopCenterContainer.dart';
 import 'package:couintproject/widgets/WebViewWidget.dart';
+import 'package:couintproject/widgets/mybottomnavigationbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:couintproject/widgets/SignInWidget.dart';
@@ -20,8 +21,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget build(BuildContext context) {
 
-
-    print(myItems.isEmpty == true ? '1' : '0');
     return Scaffold(
         backgroundColor: Colors.white70,
         body: SingleChildScrollView(
@@ -32,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               TopCenterContainer(),
               Column(
                 children: [
-                  SizedBox(height: 60),
+                  SizedBox(height: 80),
                   Center(
                     child: Card(
                       child: Container(
@@ -108,6 +107,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     return item;
                   }).toList(),
           ),
-        ])));
+        ])),
+      bottomNavigationBar: myBottomNavigationBar(),
+    );
   }
 }

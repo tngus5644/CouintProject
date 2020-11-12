@@ -30,13 +30,15 @@ class Shopping extends StatefulWidget {
   _ShoppingState createState() => _ShoppingState();
 }
 
-class _ShoppingState extends State<Shopping> with SingleTickerProviderStateMixin {
+class _ShoppingState extends State<Shopping>
+    with SingleTickerProviderStateMixin {
   Animation animationOpacity;
   AnimationController animationController;
   int selectedSticky = 0;
   Future<CouintAPI> couintApi;
-  List<Data> dataList;
   int selectedIndex = 0;
+
+  List<Data> stickyProducts;
 
   @override
   void initState() {
@@ -56,10 +58,10 @@ class _ShoppingState extends State<Shopping> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-
     return FutureBuilder(
         future: fetchAPI(http.Client()),
         builder: (context, snapshot) {
+
           if (snapshot.hasError) print(snapshot.error);
           return snapshot.hasData
               ? Scaffold(
@@ -75,19 +77,21 @@ class _ShoppingState extends State<Shopping> with SingleTickerProviderStateMixin
                           selectedIndex: Shopping.selectedIndex,
                           onChanged: (id) {
                             setState(() {
-                              ///선택된 아이디만 받아줄수있는 로직 구현 필요.
+                              Shopping.selectedIndex = id;
+                              stickyProducts = snapshot.data.products.data
+                                  .where((Data element) =>
+                                      element.market_id ==
+                                      Shopping.selectedIndex)
+                                  .toList();
                             });
                           },
                         ),
                         content: ProductWidget(
-                          animationOpacity: animationOpacity,
-                          selectedIndex: Shopping.selectedIndex,
-                          products: snapshot.data.products,
-                        ))
+                            animationOpacity: animationOpacity,
+                            products: stickyProducts!=null ?stickyProducts:snapshot.data.products.data))
                   ]),
                   bottomNavigationBar: myBottomNavigationBar())
-              : Center(
-                  child: CircularProgressIndicator());
+              : Center(child: CircularProgressIndicator());
         });
   }
 }
