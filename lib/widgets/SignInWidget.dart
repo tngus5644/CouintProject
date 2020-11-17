@@ -2,7 +2,6 @@ import 'package:couintproject/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:couintproject/widgets/SocialMediaWidget.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:http/http.dart' as http;
 import 'package:couintproject/models/loginmodel.dart';
 
 class SignInWidget extends StatefulWidget {
@@ -19,7 +18,7 @@ class _SignInWidgetState extends State<SignInWidget> {
   Future<String> futureToken;
   String token;
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  static String SignInId;
+  static String signInId;
   @override
   void initState() {
     super.initState();
@@ -28,7 +27,6 @@ class _SignInWidgetState extends State<SignInWidget> {
   @override
   Widget build(BuildContext context) {
     final emailController = TextEditingController();
-
     final passwordController = TextEditingController();
     return Scaffold(
       key: scaffoldKey,
@@ -64,7 +62,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                     children: <Widget>[
                       SizedBox(height: 25),
                       Text('Sign In',
-                          style: Theme.of(context).textTheme.display3),
+                          style: Theme.of(context).textTheme.headline2),
                       SizedBox(height: 20),
                       new TextField(
                         style: TextStyle(color: Theme.of(context).accentColor),
@@ -72,7 +70,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         keyboardType: TextInputType.emailAddress,
                         decoration: new InputDecoration(
                           hintText: 'Email Address',
-                          hintStyle: Theme.of(context).textTheme.body1.merge(
+                          hintStyle: Theme.of(context).textTheme.bodyText2.merge(
                                 TextStyle(color: Theme.of(context).accentColor),
                               ),
                           enabledBorder: UnderlineInputBorder(
@@ -94,7 +92,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         obscureText: !_showPassword,
                         decoration: new InputDecoration(
                           hintText: 'Password',
-                          hintStyle: Theme.of(context).textTheme.body1.merge(
+                          hintStyle: Theme.of(context).textTheme.bodyText2.merge(
                                 TextStyle(color: Theme.of(context).accentColor),
                               ),
                           enabledBorder: UnderlineInputBorder(
@@ -128,7 +126,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         onPressed: () {},
                         child: Text(
                           'Forgot your password ?',
-                          style: Theme.of(context).textTheme.body1,
+                          style: Theme.of(context).textTheme.bodyText2,
                         ),
                       ),
                       SizedBox(height: 30),
@@ -137,7 +135,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                             EdgeInsets.symmetric(vertical: 12, horizontal: 70),
                         onPressed: () async {
                           futureToken = Future.value('fail');
-                          futureToken = PostLogIn(
+                          futureToken = postLogIn(
                               'ost5253@gmail.com', 'abcdefg');
                           token = await futureToken;
 
@@ -159,7 +157,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                           } else {
                             Navigator.of(context).popAndPushNamed('/calendar');
 
-                            Home.loginState = true;
+                            Home.loginState.isLogin = true;
                             Home.token = token;
                           }
                           //ost5253@gmail.com
@@ -173,7 +171,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         // else SnackBar(content: Text('로그인 정보를 확인하세요.'));
                         child: Text(
                           'Login',
-                          style: Theme.of(context).textTheme.title.merge(
+                          style: Theme.of(context).textTheme.headline6.merge(
                                 TextStyle(
                                     color: Theme.of(context).primaryColor),
                               ),
@@ -184,7 +182,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                       SizedBox(height: 50),
                       Text(
                         'Or using social media',
-                        style: Theme.of(context).textTheme.body1,
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                       SizedBox(height: 20),
                       new SocialMediaWidget()
@@ -199,7 +197,7 @@ class _SignInWidgetState extends State<SignInWidget> {
               },
               child: RichText(
                 text: TextSpan(
-                  style: Theme.of(context).textTheme.title.merge(
+                  style: Theme.of(context).textTheme.headline6.merge(
                         TextStyle(color: Theme.of(context).primaryColor),
                       ),
                   children: [
