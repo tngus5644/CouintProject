@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
-
-import 'WebViewWidget.dart';
 
 class NewAccountWidget extends StatefulWidget {
   @override

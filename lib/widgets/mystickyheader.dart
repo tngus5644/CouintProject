@@ -1,8 +1,6 @@
-import 'package:couintproject/screens/shoppingscreen.dart';
+
 import 'package:couintproject/widgets/producticonwidget.dart';
 import 'package:flutter/material.dart';
-import 'package:couintproject/models/products.dart';
-import 'package:http/http.dart' as http;
 import 'package:couintproject/models/markets.dart';
 
 class MyStickyHeader extends StatefulWidget {
@@ -40,7 +38,7 @@ class _MyStickyHeaderState extends State<MyStickyHeader> {
                     shrinkWrap: true,
                     itemCount: widget.marketList.length,
                     itemBuilder: (context, index) {
-                      double marginLeft = 0;
+                      double marginLeft;
                       (index == 0) ? marginLeft = 12 : marginLeft = 0;
                       return ProductIconWidget(
                         onPressed: (int id) {

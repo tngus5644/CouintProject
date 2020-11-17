@@ -1,24 +1,14 @@
-import 'dart:io';
 
 import 'package:couintproject/models/fetchapi.dart';
-import 'package:couintproject/screens/paymentlistscreen.dart';
-import 'package:couintproject/screens/profilescreen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:couintproject/widgets/mybottomnavigationbar.dart';
 import 'package:couintproject/widgets/HomeSliderWidget.dart';
 import 'package:couintproject/widgets/productwidget.dart';
 import 'package:couintproject/widgets/mystickyheader.dart';
-import 'package:couintproject/widgets/producticonwidget.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:couintproject/models/markets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:couintproject/models/products.dart';
 import 'package:http/http.dart' as http;
-import 'package:couintproject/models/fetchapi.dart';
-
-import '../main.dart';
-import 'couponscreen.dart';
 
 class Shopping extends StatefulWidget {
   static int selectedIndex = 1;

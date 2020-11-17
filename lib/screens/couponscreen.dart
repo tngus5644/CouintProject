@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:couintproject/widgets/mybottomnavigationbar.dart';
-import 'package:couintproject/screens/shoppingscreen.dart';
-import 'package:couintproject/widgets/HomeSliderWidget.dart';
 
 class CouponPoint extends StatefulWidget {
   @override

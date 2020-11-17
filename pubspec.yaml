@@ -44,6 +44,7 @@ dependencies:
   sticky_headers: ^0.1.8
   datetime_picker_formfield: ^0.4.2
   curved_navigation_bar: ^0.3.0
+  kakao_flutter_sdk: ^0.5.2
 
 dev_dependencies:
     webview_flutter: ^0.3.19+9
@@ -168,6 +169,7 @@ flutter:
       - img/slider2.jpg
       - img/slider3.jpg
       - img/couint_logo8.png
+      - img/kakaoIcon.png
 
 
   # To add assets to your application, add an assets section, like this:

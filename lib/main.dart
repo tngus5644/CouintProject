@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 void main() {
   KakaoContext.clientId = '4bbb077dbe7fa59050047e39f7bf0fad';
   KakaoContext.javascriptClientId = "d716358c3c4bbcc1ca7378671ad1e26e";
+
   initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 

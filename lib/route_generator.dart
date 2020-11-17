@@ -38,7 +38,6 @@ class RouteGenerator {
       case '/calendar':
         return MaterialPageRoute(builder: (_) => CalendarScreen());
 
-
       default:
       // If there is no such named route in the switch statement, e.g. /third
         return _errorRoute();

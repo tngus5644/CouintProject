@@ -24,7 +24,7 @@ class SocialMediaWidget extends StatelessWidget {
       print("error on issuing access token: $e");
     }
   }
-
+/// 카카오톡 계정 입력해서 로그인
   _loginWithKakao() async {
     try {
       var code = await AuthCodeClient.instance.request();
@@ -35,7 +35,7 @@ class SocialMediaWidget extends StatelessWidget {
       print(e);
     }
   }
-
+/// 카카오톡으로 로긔인
   _loginWithTalk() async {
     try {
       var code = await AuthCodeClient.instance.requestWithTalk();

@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'markets.dart';
 import 'products.dart';
@@ -44,16 +43,4 @@ class CouintAPI {
   String toString() {
     return '{${this.status},${this.markets},${this.products} }';
   }
-  //
-  // Map<String, dynamic> toJson() {
-  //   final Map<String, dynamic> data = new Map<String, dynamic>();
-  //   data['status'] = this.status;
-  //   if (this.markets != null) {
-  //     data['markets'] = this.markets.map((v) => v.toJson()).toList();
-  //   }
-  //   if (this.products != null) {
-  //     data['products'] = this.products.toJson();
-  //   }
-  //   return data;
-  // }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:couintproject/models/markets.dart';
 import 'package:couintproject/screens/shoppingscreen.dart';
-import 'package:couintproject/widgets/productwidget.dart';
 
 class ProductIconWidget extends StatefulWidget {
   ValueChanged<int> onPressed;
@@ -22,20 +21,18 @@ class _ProductIconWidgetState extends State<ProductIconWidget>
     return buildSelectedMarkets(context);
   }
 
-  Container buildSelectedMarkets(BuildContext context)  {
+  Container buildSelectedMarkets(BuildContext context) {
     return Container(
-      decoration:
-          BoxDecoration(border: Border.all(color: Colors.white, width: 0.5),
-          color:
-          widget.markets.selected
-              ? Colors.blueAccent[50]
-              : Colors.blueAccent,),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white, width: 0.5),
+        color:
+            widget.markets.selected ? Colors.blueAccent[50] : Colors.blueAccent,
+      ),
       child: InkWell(
         onTap: () {
           setState(() {
             widget.onPressed(widget.markets.id);
             Shopping.selectedIndex = widget.markets.id;
-
           });
         },
         child: AnimatedContainer(
@@ -43,19 +40,21 @@ class _ProductIconWidgetState extends State<ProductIconWidget>
             curve: Curves.easeInOut,
             padding: EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(
-              color:
-              widget.markets.selected
+              color: widget.markets.selected
                   ? Colors.blueAccent[50]
                   : Colors.blueAccent,
             ),
             child: Row(children: <Widget>[
               Hero(
                 tag: widget.heroTag + widget.markets.id.toString(),
-                child:
-                    FlatButton(
-                      child: Text(widget.markets.name,
-                          style: TextStyle(color: Colors.white)),
-                    ),
+                child: FlatButton(
+
+                  child: Text(
+                    widget.markets.name,
+                    style: TextStyle(color: Colors.white),
+                  ),
+
+                ),
               )
             ])),
       ),

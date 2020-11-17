@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:couintproject/models/products.dart';
-import 'package:couintproject/screens/shoppingscreen.dart';
 
 class ProductGridItemWidget extends StatefulWidget {
   final Data data;
@@ -68,7 +67,7 @@ class _ProductGridItemWidgetState extends State<ProductGridItemWidget> {
                       height: 15,
                       child: Text(
                         widget.data.name,
-                        style: Theme.of(context).textTheme.body2,
+                        style: Theme.of(context).textTheme.bodyText1,
                       ),
                     ),
                     Padding(padding: const EdgeInsets.all(2)),
@@ -77,7 +76,7 @@ class _ProductGridItemWidgetState extends State<ProductGridItemWidget> {
                       height: 10,
                       child: Text(
                         widget.data.introduction,
-                        style: Theme.of(context).textTheme.body1,
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                     ),
                     Padding(padding: const EdgeInsets.all(2)),
@@ -85,7 +84,7 @@ class _ProductGridItemWidgetState extends State<ProductGridItemWidget> {
                       height: 15,
                       child: Text(
                         widget.data.getPrice() + '  ',
-                        style: Theme.of(context).textTheme.body1,
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                     ),
                     Container(
@@ -100,7 +99,7 @@ class _ProductGridItemWidgetState extends State<ProductGridItemWidget> {
                         Padding(padding: const EdgeInsets.all(2)),
                         Text(
                           widget.data.name,
-                          style: Theme.of(context).textTheme.body2,
+                          style: Theme.of(context).textTheme.bodyText1,
                         )
                       ]),
                     )

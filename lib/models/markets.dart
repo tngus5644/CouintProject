@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<MarketList> fetchMarkets(http.Client client) async {
@@ -100,4 +98,5 @@ int selectedId(List<Markets> markets, int id) {
       return markets.id;
     }
   });
+  return null;
 }

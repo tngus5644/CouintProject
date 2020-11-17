@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:couintproject/models/markets.dart';
-import 'package:couintproject/screens/shoppingscreen.dart';
 
 class HomeSliderWidget extends StatefulWidget {
   List<Markets> marketList;

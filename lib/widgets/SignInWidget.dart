@@ -19,6 +19,7 @@ class _SignInWidgetState extends State<SignInWidget> {
   String token;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   static String signInId;
+
   @override
   void initState() {
     super.initState();
@@ -26,8 +27,10 @@ class _SignInWidgetState extends State<SignInWidget> {
 
   @override
   Widget build(BuildContext context) {
+
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
+    print(Home.loginState.email);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.blueAccent,
@@ -64,13 +67,16 @@ class _SignInWidgetState extends State<SignInWidget> {
                       Text('Sign In',
                           style: Theme.of(context).textTheme.headline2),
                       SizedBox(height: 20),
-                      new TextField(
+                      TextField(
                         style: TextStyle(color: Theme.of(context).accentColor),
                         controller: emailController,
                         keyboardType: TextInputType.emailAddress,
-                        decoration: new InputDecoration(
+                        decoration: InputDecoration(
                           hintText: 'Email Address',
-                          hintStyle: Theme.of(context).textTheme.bodyText2.merge(
+                          hintStyle: Theme.of(context)
+                              .textTheme
+                              .bodyText2
+                              .merge(
                                 TextStyle(color: Theme.of(context).accentColor),
                               ),
                           enabledBorder: UnderlineInputBorder(
@@ -85,14 +91,17 @@ class _SignInWidgetState extends State<SignInWidget> {
                         ),
                       ),
                       SizedBox(height: 20),
-                      new TextField(
+                      TextField(
                         controller: passwordController,
                         style: TextStyle(color: Theme.of(context).accentColor),
-                        keyboardType: TextInputType.text,
+                        keyboardType: TextInputType.visiblePassword,
                         obscureText: !_showPassword,
-                        decoration: new InputDecoration(
+                        decoration: InputDecoration(
                           hintText: 'Password',
-                          hintStyle: Theme.of(context).textTheme.bodyText2.merge(
+                          hintStyle: Theme.of(context)
+                              .textTheme
+                              .bodyText2
+                              .merge(
                                 TextStyle(color: Theme.of(context).accentColor),
                               ),
                           enabledBorder: UnderlineInputBorder(
@@ -136,39 +145,25 @@ class _SignInWidgetState extends State<SignInWidget> {
                         onPressed: () async {
                           futureToken = Future.value('fail');
                           futureToken = postLogIn(
-                              'ost5253@gmail.com', 'abcdefg');
-                          token = await futureToken;
+                              'tngus5644@kakao.com', '00000000');
+                          /// 변경할것
 
-                          // 2 number refer the index of Home page
-                          // if (emailController.text == null &&
-                          //     passwordController.text == null) {
-                          //   print('null');
-                          //   scaffoldKey.currentState.showSnackBar(
-                          //       SnackBar(content: Text("ID를 입력하세요.")));
-                          // } else if (emailController.text != null &&
-                          //     passwordController.text == null) {
-                          //   scaffoldKey.currentState.showSnackBar(
-                          //       SnackBar(content: Text("패스워드를 입력하세요.")));
-                          // }
+                          ///emailController.text,
+                          ///passwordController.text
+
+                          token = await futureToken;
                           if (token == 'postfail') {
                             scaffoldKey.currentState.showSnackBar(
-                                SnackBar(content: Text("로그인 정보를 확인하세요.")), );
-
+                              SnackBar(content: Text("로그인 정보를 확인하세요.")),
+                            );
                           } else {
-                            Navigator.of(context).popAndPushNamed('/calendar');
-
+                            Home.loginState.email = emailController.text;
                             Home.loginState.isLogin = true;
                             Home.token = token;
+
+                            Navigator.of(context).popAndPushNamed('/calendar');
                           }
-                          //ost5253@gmail.com
-                          //abcdefg
-
-                          print(token);
                         },
-
-                        // if()
-                        //  Navigator.of(context).pushNamed('/shopping');
-                        // else SnackBar(content: Text('로그인 정보를 확인하세요.'));
                         child: Text(
                           'Login',
                           style: Theme.of(context).textTheme.headline6.merge(
@@ -185,7 +180,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                         style: Theme.of(context).textTheme.bodyText2,
                       ),
                       SizedBox(height: 20),
-                      new SocialMediaWidget()
+                      SocialMediaWidget()
                     ],
                   ),
                 ),

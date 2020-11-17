@@ -29,20 +29,11 @@ class _CalendarScreenState extends State<CalendarScreen>
   void initState() {
     super.initState();
     final _selectedDay = DateTime.now();
+
     _events = {
-      _selectedDay.subtract(Duration(days: 30)): [
-        'Event A0',
-        'Event B0',
-        'Event C0'
-      ],
-      _selectedDay.subtract(Duration(days: 27)): ['Event A1'],
-      _selectedDay.subtract(Duration(days: 20)): [
-        'Event A2',
-        'Event B2',
-        'Event C2',
-        'Event D2'
-      ],
+      _selectedDay.subtract(Duration(days: 1)): ['Event A1'],
     };
+
     _selectedEvents = _events[_selectedDay] ?? [];
     _calendarController = CalendarController();
 
@@ -63,7 +54,11 @@ class _CalendarScreenState extends State<CalendarScreen>
   void _onDaySelected(DateTime day, List events, List holidays) {
     print('CALLBACK: _onDaySelected');
     setState(() {
+
       _selectedEvents = events;
+
+      _selectedEvents.add('수입  ' );
+      _selectedEvents.add('지출  ' );
     });
   }
 
@@ -202,6 +197,7 @@ class _CalendarScreenState extends State<CalendarScreen>
         },
       ),
       onDaySelected: (date, events, holidays) {
+
         _onDaySelected(date, events, holidays);
         _animationController.forward(from: 0.0);
       },
